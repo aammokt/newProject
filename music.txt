@@ -2,3 +2,5 @@ Rock
 Country
 R&B
 Hip-Hop
+Soul
+Pop
