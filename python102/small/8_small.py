@@ -1,0 +1,5 @@
+sentence = input("Please enter a string:")
+list_sentence = list(sentence)
+list_sentence.reverse()
+rev_sentence = "".join(list_sentence)
+print(f'The reverse of the string above is: {rev_sentence}')
