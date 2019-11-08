@@ -6,9 +6,9 @@ def lookfor():
    looking = input("Name: ")
    found = myPhoneBook.get(looking)
    if found == None:
-       print("%s is not in the phonebook" % looking)
+       print(f' {looking} is not in the phonebook')
    else:
-       print(f' {looking} phone is {myPhoneBook[looking]}')
+       print(f' {looking}\'s phone number is {myPhoneBook[looking]}')
 def addone():
    nname = input("New Name: ")
    pphone = input("Phone: ")
