@@ -1,19 +1,46 @@
-user_input = int(input("What do you want to do (1-5)? "))
-
-while user_input != 0:
-    if user_input == 5:
-        print(5)
-        break
-    elif user_input == 1:
-        print(1)
-        user_input = int(input("What do you want to do (1-5)? "))
-    elif user_input == 2:
-        print(2)
-        user_input = int(input("What do you want to do (1-5)? "))
-    elif user_input == 3:
-        print(3)
-        user_input = int(input("What do you want to do (1-5)? "))
-    elif user_input == 4:
-        print(4)
-        user_input = int(input("What do you want to do (1-5)? "))
-    
+myPhoneBook = {"Alim": "453-213-4567",
+               "Navean": "123-456-7890",
+               "Gustavo": "987-654-1230"
+               }
+def lookfor():
+   looking = input("Name: ")
+   found = myPhoneBook.get(looking)
+   if found == None:
+       print("%s is not in the phonebook" % looking)
+   else:
+       print(f' {looking} phone is {myPhoneBook[looking]}')
+def addone():
+   nname = input("New Name: ")
+   pphone = input("Phone: ")
+   myPhoneBook[nname] = pphone
+def delone():
+   nname = input("New Name: ")
+   if nname in myPhoneBook:
+       del myPhoneBook[nname]
+   else:
+       print(f'{nname} not in the phonebook')
+while True:
+   print ("My PhoneBook")
+   print ("===============")
+   print ("")
+   print ("1- Look for a name")
+   print ("2- Add a new name")
+   print ("3- Del a name")
+   print ("4- List all")
+   print ("5- Quit")
+   print ("")
+   print ("What do you want to do: ")
+   YourChoice = input()
+   if YourChoice == "1":
+       lookfor()
+   elif YourChoice == "2":
+       addone()
+   elif YourChoice == "3":
+       delone()
+   elif YourChoice == "4":
+       print(myPhoneBook)
+   elif YourChoice == "5":
+       print ("Bye Bye")
+       break
+   else:
+       print("Stop kidding")
