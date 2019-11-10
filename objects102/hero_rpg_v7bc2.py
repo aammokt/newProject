@@ -26,7 +26,7 @@ def main():
     zombie_health = zombie.health
     zombie_power = zombie.power
 
-    while goblin_health > 0 and hero_health > 0 and zombie_health > 0:
+    while goblin_health > 0 and hero_health > 0:
         print("You have {} health and {} power.".format(hero_health, hero_power))
         print("The goblin has {} health and {} power.".format(goblin_health, goblin_power))
         print("The zombie has {} health and {} power".format(zombie_health, zombie_power))
@@ -45,6 +45,7 @@ def main():
             if goblin_health <= 0:
                 print("The goblin is dead.")
         elif raw_input == "2":
+            zombie_health -= hero_power
             print("You do {} damage to the zombie.".format(hero_power))
         elif raw_input == "3":
             pass
@@ -61,7 +62,7 @@ def main():
             if hero_health <= 0:
                 print("You are dead.")
 
-        if zombie_health > 0 and raw_input == "2":
+        if raw_input == "2":
             # Zombie attacks hero
             hero_health -= zombie_power
             print("The zombie does {} damage to you.".format(zombie_power))
